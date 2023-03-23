@@ -1,5 +1,7 @@
-import React from 'react';
+// Main component that will hold other components
 import Display from './Display';
+import axios from 'axios'
+import { useState, useEffect } from 'react'
 
 
 const Pokedex = () => {
