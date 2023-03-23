@@ -1,13 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import axios from 'axios'
+import { useState, useEffect } from 'react'
+import Pokedex from './Components/Pokedex';
 
 function App() {
+
   return (
-    <div className="App">
-      <header>
-        <h1>Pokedex!</h1>
-      </header>
-    </div>
+    <>
+      <Pokedex />
+    </>
   );
 }
 
