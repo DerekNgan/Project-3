@@ -1,3 +1,4 @@
+// App.js will hold the main component (pokedex)
 import './App.css';
 import Pokedex from './Components/Pokedex';
 
