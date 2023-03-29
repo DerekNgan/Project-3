@@ -60,6 +60,9 @@ const Pokedex = () => {
                             <PokeInfo poke={pokeInfo}/>
                     </div>
             </div>
+            <footer>
+                <p>© Derek Ngan 2023</p>
+            </footer>
         </>
     )
 }
