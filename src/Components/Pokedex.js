@@ -3,6 +3,7 @@
 // import components accordingly
 import Display from './Display';
 import PokeInfo from './PokeInfo';
+import Form from './Form';
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 
@@ -35,7 +36,6 @@ const Pokedex = () => {
             // passing the object array into the getPokemon method which will be defined below so that the method can map through the information for the specific data that is needed
                 getPokemon(response.data.results)
                 setLoading(false)
-                console.log(pokeData)
             }
            
          // a method that passes the response as an argument which fetches specific pokemon data using map by passing a parameter to make an api call then storing that data into a variable for pushing the data into the useState from the api and update the state within / return that data and sort the data based on pokemon id
@@ -57,10 +57,9 @@ const Pokedex = () => {
             }
 
          // create a useEffect that will only run functions on api fetch (aka url state)
-         {/* // create a useEffect that will run everything in the function that holds all the states, dependant on the url state (aka once we fetch from the API) */}
-         useEffect(()=>{
-            pokeAll();
-         },[url])
+         // create a useEffect that will run everything in the function that holds all the states, dependant on the url state (aka once we fetch from the API) 
+         useEffect(()=>{pokeAll()},[url])
+
     // setup within the return a container that will hold the info (left and right) along with the buttons and import the other two components in here. 
     // import the Display and Info components
     // Once the data has been fetched from the API, prop the info into the display component 
@@ -87,8 +86,9 @@ const Pokedex = () => {
                         
             <div className="container">
                     <div className="left-content">
+
                             <Display pokemon={pokeData} loading={loading} pokeInfo={poke=>setPokeInfo(poke)} />
-   
+
                             <div className="btn-container">
                                 {prevUrl && <button onClick={()=>{
                                     setPokedata([])
@@ -100,8 +100,9 @@ const Pokedex = () => {
                                 }}>Next</button>}
                             </div>
                     </div>
+
                     <div className="right-content">
-                            <PokeInfo data={pokeInfo}/>
+                            <PokeInfo poke={pokeInfo}/>
                     </div>
             </div>
         </>

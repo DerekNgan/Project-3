@@ -1,5 +1,5 @@
 ////Component that will display the pokemon info and image on the right side
-const PokeInfo = ({data}) => {
+const PokeInfo = ({poke}) => {
         return(
                 <>
                 {/* // prop the info from pokedex which was defined as data in the main component */}
@@ -13,16 +13,16 @@ const PokeInfo = ({data}) => {
                 // All relevant pokemon info to be mapped through and displayed here in their proper elements(name, base stats, types)
                 // setup for the info, name, img, type, base stats */}
                 {
-                        (!data) ? "" : 
+                        (!poke) ? "" : 
                         <>
                         <div className="infoContainer">
-                             <h1>{data.name}</h1>
-                             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${data.id}.gif`} alt="" />
+                             <h1>{poke.name}</h1>
+                             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/${poke.id}.gif`} alt="" />
                                 <div className="types">
                                         {
-                                        data.types.map(poke=>{
+                                        poke.types.map((poke, index)=>{
                                                 return(
-                                                <div className="type">
+                                                <div className="type" key={index}>
                                                         <h3>{poke.type.name}</h3>
                                                 </div>
                                                 )
@@ -31,9 +31,9 @@ const PokeInfo = ({data}) => {
                                 </div>
                                         <div className="base-stats">
                                                 {
-                                                    data.stats.map(poke=>{
+                                                    poke.stats.map((poke, index)=>{
                                                         return(
-                                                        <h4>{poke.stat.name}:{poke.base_stat}</h4>
+                                                        <h4 key={index}>{poke.stat.name}:{poke.base_stat}</h4>
                                                         )
                                                     })
                                                 }
