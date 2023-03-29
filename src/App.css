@@ -33,6 +33,10 @@ body{
     flex-direction: column;
 }
 
+.title h2{
+    text-transform: capitalize;
+}
+
 .title form{
     font-size: 1rem;
 }
@@ -89,6 +93,7 @@ body{
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .display h2{
@@ -170,6 +175,12 @@ body{
     background-color: yellow;
     border-radius: 8px;
     box-shadow: 0px 0px 20px 5px #00077C;
+  }
+
+  @media (max-width: 1600px){
+    .display h2{
+        font-size: 1rem;
+    }
   }
 
   @media (max-width: 1300px){
@@ -257,5 +268,8 @@ body{
   @media (max-width: 330px) {
     .type h3{
         font-size: .5rem;
+    }
+    .infoContainer h1{
+        font-size: 1rem;
     }
   }
