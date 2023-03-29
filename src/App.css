@@ -18,6 +18,8 @@ img { width: 100%; display: block; height: auto;}
 body{
     background-color: rgb(213, 0, 0);
     font-family: 'Open Sans', sans-serif;
+    color: yellow;
+    text-shadow: 5px 5px 0px #00077C;
 }
 
 .title{
@@ -74,7 +76,12 @@ body{
 
 .display{
     width: 45%;
-    background-color: #9EDEF9;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px;
     box-shadow: 0 5px 5px rgba(0,0,0,0.5);
     padding: 0 1.5rem;
@@ -118,6 +125,7 @@ body{
     justify-content: space-around;
     align-items: center;
     margin-top: 1rem;
+    text-shadow: none;
 }
 
 .type{
@@ -129,6 +137,12 @@ body{
     width: 100%;
     margin-right: 10px;
     text-transform: capitalize;
+    text-shadow: none;
+}
+
+.type h3{
+    color: black;
+    text-shadow: none;
 }
 
 .base-stats{
@@ -136,6 +150,7 @@ body{
     text-transform: capitalize;
     color: yellow;
     text-shadow: 5px 5px 0px #00077C;
+    padding-bottom: 1rem;
 }
 
 .btn-container{
@@ -154,4 +169,93 @@ body{
     color: black;
     background-color: yellow;
     border-radius: 8px;
+    box-shadow: 0px 0px 20px 5px #00077C;
+  }
+
+  @media (max-width: 1300px){
+    .left-content{
+    flex-direction: column;
+    }
+    .left-content .display{
+        width: 100%;
+    }
+    .left-content img{
+        width: 50%;
+    }
+  }
+
+  @media (max-width: 1200px) {
+
+    .left-content,
+    .right-content{
+        flex-basis: none;
+    }
+
+    .left-content{
+        flex-direction: column;
+    }
+
+    .display{
+        width: 100%;
+    }
+  }
+
+  @media (max-width: 700px){
+    .container{
+        flex-direction: column-reverse;
+    }
+    .right-content{
+        position: static;
+        width: 100%;
+    }
+    .left-content{
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    .left-content img{
+        width: 30%;
+    }
+
+    .btn-container{
+        width: 100%;
+    }
+
+  }
+
+  @media (max-width: 500px){
+    .title{
+        font-size: 1.5rem;
+    }
+
+    .display h2{
+        font-size: 1.2rem;
+    }
+
+    .left-content img{
+        width: 50%;
+    }
+
+    .infoContainer h1{
+        font-size: 1.5rem;
+    }
+
+    .type h3{
+        font-size: .7rem;
+    }
+
+    .base-stats{
+        margin-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .base-stats h4{
+        font-size: .8rem;
+    }
+  }
+
+  @media (max-width: 330px) {
+    .type h3{
+        font-size: .5rem;
+    }
   }
